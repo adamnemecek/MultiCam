@@ -9,7 +9,6 @@
 import Cocoa
 import AVFoundation
 
-
 class ViewController: NSViewController {
     
     @IBOutlet weak var previewBox: NSView!
@@ -54,7 +53,7 @@ class ViewController: NSViewController {
         let rectX: CGFloat = index * rectWidth
         let rectY: CGFloat = 0
         
-        let rect = CGRect.init(x: rectX, y: rectY, width: rectWidth, height: rectHeight)
+        let rect = CGRect(x: rectX, y: rectY, width: rectWidth, height: rectHeight)
         
         return rect
     }
@@ -92,7 +91,7 @@ class ViewController: NSViewController {
                 
                 //create a connection with the input port and the preview layer
                 //and connect it to the session
-                let connection = AVCaptureConnection.init(inputPort: inputPort, videoPreviewLayer: videoPreviewLayer)
+                let connection = AVCaptureConnection(inputPort: inputPort, videoPreviewLayer: videoPreviewLayer)
                 
                 if (session.canAddConnection(connection) == true) {
                     session.addConnection(connection)
